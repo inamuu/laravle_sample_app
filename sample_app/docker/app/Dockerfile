@@ -18,4 +18,10 @@ RUN rm -f /etc/apache2/sites-available/000-default.conf
 RUN unlink /etc/apache2/sites-enabled/000-default.conf
 COPY docker/app/laravel.conf /etc/apache2/sites-enabled/laravel.conf
 
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
+    php composer-setup.php && \
+    php -r "unlink('composer-setup.php');" && \
+    mv composer.phar /usr/local/bin/composer && \
+    chmod +x /usr/local/bin/composer
+
 CMD [ "apachectl", "-D", "FOREGROUND" ]
