@@ -28,5 +28,6 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     chmod +x /usr/local/bin/composer
 
 RUN docker-php-ext-install pdo_mysql
+RUN a2enmod rewrite
 
 CMD [ "apachectl", "-D", "FOREGROUND" ]
