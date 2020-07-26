@@ -6,6 +6,7 @@ ENV LANG: ja_JP.UTF-8
 RUN apt update \
     && \
     apt install -y \
+    default-mysql-client \
     tcpdump \
     vim \
     && \
