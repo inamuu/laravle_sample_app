@@ -7,6 +7,8 @@ RUN apt update \
     && \
     apt install -y \
     default-mysql-client \
+    git \
+    npm \
     tcpdump \
     vim \
     && \
@@ -24,5 +26,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/local/bin/composer && \
     chmod +x /usr/local/bin/composer
+
+RUN docker-php-ext-install pdo_mysql
 
 CMD [ "apachectl", "-D", "FOREGROUND" ]
