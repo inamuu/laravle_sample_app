@@ -8,10 +8,9 @@ services:
     image: laravel-app
     container_name: app
     ports:
-      - "8080:80"
-    #tty: true
-    #volumes:
-    #  - .:/var/www/html
+      - "80:80"
+    volumes:
+      - .:/var/www/html
     depends_on:
       - db
 
