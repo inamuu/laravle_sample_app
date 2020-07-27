@@ -4,7 +4,6 @@
 <div class="container">
     <div class="row justify-content-center">
     <div class="col-md-8">
-    @foreach ($posts as $post)
         <div class="card">
         <div class="card-body">
             @if (session('status'))
@@ -16,6 +15,7 @@
             @if (count($posts) > 0)
             <div class="panel panel-default">
                 <div class="panel-body">
+                @foreach ($posts as $post)
                     <table class="table table-striped task-table">
                         <tbody>
                             <tr>
@@ -27,12 +27,12 @@
                             </tr>
                         </tbody>
                     </table>
+                @endforeach
                 </div>
             </div>
             @endif
         </div>
         </div>
-    @endforeach
     {{ $posts->links() }}
     </div>
     </div>
