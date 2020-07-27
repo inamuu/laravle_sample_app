@@ -4,7 +4,7 @@ use App\Post;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
-    $posts = Post::all();
+    $posts = DB::table('posts')->paginate(10);
     return view('posts', [ 'posts' => $posts ]);
 });
 
