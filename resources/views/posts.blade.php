@@ -24,14 +24,14 @@
 
                     <div class="panel-body">
                         <table class="table table-striped task-table">
-                            <thead>
-                                <th>ブログ記事</th>
-                                <th>&nbsp;</th>
-                            </thead>
                             <tbody>
                                 @foreach ($posts as $post)
                                     <tr>
-                                        <td class="table-text"><div>{{ $post->title }}</div></td>
+                                        <td class="table-text"><div>タイトル: {{ $post->title }}</div></td>
+                                        <td class="table-text"><div>投稿日時: {{ $post->created_at }}</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-text"><p>{{ $post->content }}</p></td>
                                     </tr>
                                 @endforeach
                             </tbody>
