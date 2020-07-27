@@ -1,9 +1,11 @@
 <?php
 
-//Route::get('/folders/{id}/tasks', 'TaskController@index')->name('tasks.index');
+use App\Post;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
-    return view('posts');
+    $posts = Post::all();
+    return view('posts', [ 'posts' => $posts ]);
 });
 
 Auth::routes();
