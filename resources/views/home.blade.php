@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'ダッシュボード')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>ダッシュボード</h1>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <p>ようこそ</p>
 @stop
 
 @section('css')
